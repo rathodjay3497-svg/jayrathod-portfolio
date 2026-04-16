@@ -78,7 +78,17 @@
 
   html {
     scroll-behavior: smooth;
-    cursor: none;
+  }
+
+  @media (pointer: fine) {
+    html {
+      cursor: none;
+    }
+
+    a,
+    button {
+      cursor: none;
+    }
   }
 
   body {
@@ -112,10 +122,6 @@
     background: #a4e6ff;
   }
 
-  a,
-  button {
-    cursor: none;
-  }
 }
 
 @layer components {

@@ -242,6 +242,10 @@ export default function Navbar() {
                     key={href}
                     href={href}
                     aria-label={href.replace("#", "")}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+                    }}
                     className={`block rounded-full transition-all duration-300 ${active === href
                         ? "w-4 h-1.5 bg-primary"
                         : isDark
@@ -288,7 +292,13 @@ export default function Navbar() {
                     <a
                       key={href}
                       href={href}
-                      onClick={() => setMenuOpen(false)}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setMenuOpen(false);
+                        setTimeout(() => {
+                          document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+                        }, 50);
+                      }}
                       className={`relative flex items-center gap-3 px-4 py-3.5 rounded transition-all duration-200 ${isActive
                           ? isDark
                             ? "bg-primary/15 border border-primary/30"
@@ -323,7 +333,13 @@ export default function Navbar() {
               {/* Connect CTA in menu */}
               <a
                 href="#contact"
-                onClick={() => setMenuOpen(false)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setMenuOpen(false);
+                  setTimeout(() => {
+                    document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
+                  }, 50);
+                }}
                 className="mt-4 flex items-center justify-center gap-2 w-full bg-primary text-on-primary py-3.5 text-sm font-bold font-headline tracking-widest uppercase hover:shadow-neon-primary transition-all"
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">

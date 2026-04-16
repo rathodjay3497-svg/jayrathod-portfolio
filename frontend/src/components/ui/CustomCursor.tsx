@@ -3,7 +3,12 @@ import { motion, useMotionValue, useSpring, AnimatePresence } from "framer-motio
 
 type CursorState = "default" | "hover" | "click";
 
+// Only render on devices with a fine pointer (mouse/trackpad), not touch screens
+const hasFinePointer = typeof window !== "undefined" && window.matchMedia("(pointer: fine)").matches;
+
 export default function CustomCursor() {
+  if (!hasFinePointer) return null;
+
   const mouseX = useMotionValue(-300);
   const mouseY = useMotionValue(-300);
   const [state, setState] = useState<CursorState>("default");
