@@ -1,0 +1,350 @@
+%-------------------------
+% Resume in Latex
+% Author : Abey George
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{graphicx}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+\RequirePackage{tikz}
+\RequirePackage{xcolor}
+\RequirePackage{fontawesome}
+\usepackage{tikz}
+\usetikzlibrary{svg.path}
+
+
+\definecolor{cvblue}{HTML}{0E5484}
+\definecolor{black}{HTML}{130810}
+\definecolor{darkcolor}{HTML}{0F4539}
+\definecolor{cvgreen}{HTML}{3BD80D}
+\definecolor{taggreen}{HTML}{00E278}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\colorlet{name}{black}
+\colorlet{tagline}{darkcolor}
+\colorlet{heading}{darkcolor}
+\colorlet{headingrule}{cvblue}
+\colorlet{accent}{darkcolor}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+% \pagestyle{fancy}
+% \fancyhf{}  % clear all header and footer fields
+% \fancyfoot{}
+% \renewcommand{\headrulewidth}{0pt}
+% \renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{\large#1} & \textbf{\small #2} \\
+      \textit{\large#3} & \textit{\small #4} \\
+      
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+
+\newcommand\sbullet[1][.5]{\mathbin{\vcenter{\hbox{\scalebox{#1}{$\bullet$}}}}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+
+
+\begin{center}
+    {\Huge \scshape Rathod Jay} \\ \vspace{1pt}
+    Anand,Gujarat,India \\ \vspace{1pt}
+    \small \href{tel:+91 7016915420}{ \raisebox{-0.1\height}\faPhone\ \underline{+91-7016915420} ~} \href{mailto:rathodjay3497@gmail.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{rathodjay3497@gmail.com}} ~ 
+    \href{https://www.linkedin.com/in/rathodjay3497/}{\raisebox{-0.2\height}\faLinkedinSquare\ \underline{jay-rathod}}  ~
+    \href{https://github.com/JayRathod341997}{\raisebox{-0.2\height}\faGithub\ \underline{JayRathod341997}} ~
+    \href{https://www.hackerrank.com/rathodjay4397}{\raisebox{-0.2\height}\faHackerrank\ \underline{rathodjay4397}} ~
+    
+    \vspace{-8pt}
+
+\end{center}
+
+
+%-----------PROGRAMMING SKILLS-----------
+\section{TECHNICAL SKILLS}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+    \textbf{\normalsize{Frameworks \& Libraries:}}{\normalsize{ TensorFlow, PyTorch, ReactJS, Django, scikit-learn ,MLflow }} \\
+    
+    \textbf{\normalsize{Data Processing:}}{ \normalsize{Pandas, NumPy}} \\
+    
+    \textbf{\normalsize{Model Deployment:}}{\normalsize{Docker, FastAPI, Streamlit}} \\
+    
+    \textbf{\normalsize{Database:}}{\normalsize{ MySQL, MongoDB, ChromaDB}} \\
+    
+    \textbf{\normalsize{Developer \& Analytics Tools:}}{\normalsize{ PyCharm, Power BI }} \\
+
+    }}
+ \end{itemize}
+ \vspace{-12pt}
+
+
+%-----------EXPERIENCE-----------
+\section{PROFESSIONAL EXPERIENCE}
+  \resumeSubHeadingListStart
+
+    
+    \resumeSubheading
+      {Techabbot}{Nov,2025 – Present} 
+      {\underline {Senior Software Developer }}{Ahmedabad , India}
+       \resumeItemListStart
+    \resumeItem{\normalsize{Engineered an \textbf{SQL Agent} enabling users to interact with multiple databases using natural language, leveraging NLP and LLMs, and deployed the solution using \textbf{Azure OpenAI}, \textbf{Azure Machine Learning}, and \textbf{Azure App Service} to generate accurate, secure, and efficient SQL queries at scale.}}
+    \resumeItem{\normalsize{Implemented a \textbf{resilient browser automation system} with auto-healing capabilities for CSS selectors and XPath, reducing maintenance overhead and increasing web scraping success rates.}}
+\resumeItemListEnd
+        
+    \resumeSubheading
+      {Edunet Foundation - Microsoft \& SAP \href{https://edunetfoundation.org/}{\raisebox{-0.1\height}\faExternalLink }}{Oct,2023 – Nov,2025} 
+      {\underline {Consultant / Master Trainer }}{Ahmedabad , India}
+
+      \resumeItemListStart
+        \resumeItem{\normalsize{Fine-tuned large language models using hyperparameter optimization, feature engineering, and advanced training techniques, and deployed them using \textbf{Azure Machine Learning}, \textbf{Azure AI Studio}, and \textbf{Azure DevOps} pipelines to improve model accuracy, latency, and cost efficiency}}
+        \resumeItem{\normalsize{Delivered hands-on training programs on Machine Learning, Generative AI, NLP, and ReactJS, leveraging \textbf{Microsoft Azure} services such as \textbf{Azure ML}, \textbf{Azure OpenAI}, and \textbf{Azure Blob Storage}, in collaboration with sponsors including Microsoft, TCS, and SAP, to equip learners with industry-ready skills}}
+        \resumeItem{\normalsize{Trained \textbf{10,000+ students} and \textbf{500+ faculty members} in Machine Learning, Deep Learning, and AI, integrating cloud-native workflows on \textbf{Azure} for model training, experimentation, deployment, and monitoring across academic and enterprise environments}}
+    \resumeItemListEnd
+
+
+    \resumeSubheading
+      {MeasureOne \href{https://www.measureone.com/}{\raisebox{-0.1\height}\faExternalLink }}{2022 – 2023} 
+      {\underline{Software Engineer}}{Ahmedabad , India}
+       
+   \resumeItemListStart
+    \resumeItem{\normalsize{Designed, built, and maintained scalable data pipelines, optimized machine learning models, and implemented end-to-end MLOps workflows for reliable cloud deployment and monitoring}}
+    \resumeItem{\normalsize{Developed and maintained high-performance server-side logic, reducing API response times by \textbf{10\%} through query optimization, caching, and efficient request handling}}
+    \resumeItem{\normalsize{Engineered automated data scraping and ingestion scripts aligned with business requirements, significantly streamlining data collection and improving data availability for analytics and modeling}}
+    \resumeItemListEnd
+        \vspace{-1pt}
+
+      \resumeSubheading
+      {LTIMindtree \href{https://www.ltimindtree.com/}{\raisebox{-0.1\height}\faExternalLink }}{2020 – 2022} 
+      {\underline{Software Engineer}}{Mumbai , India}
+       \vspace{5pt}
+      \resumeItemListStart
+        \resumeItem{\normalsize{ Monitored applications and software systems using \textbf{AppDynamics}, identifying performance bottlenecks and optimizing efficiency}}
+        \resumeItem{\normalsize{Implemented rigorous testing strategies for ML models, ensuring accuracy, bias reduction, and performance improvements}}
+        
+
+      \resumeItemListEnd  
+       \vspace{5pt}
+
+
+        \resumeSubheading
+      {TOSHIBA \href{https://toshiba-india.com/}{\raisebox{-0.1\height}\faExternalLink }}{} 
+      {\underline{Machine Learning Intern}}{Bengaluru , India}
+       
+      \resumeItemListStart
+        \resumeItem{\normalsize{Developed key modules for Wave Clustering, enabling efficient pattern recognition in time-series waveforms.}}
+        \resumeItem{Designed and implemented an algorithm to \textbf{detect anomalies} in uni-variate waveforms from power grid systems, identifying time intervals with anomalous patterns in the time domain.}
+      \resumeItemListEnd  
+      
+  \resumeSubHeadingListEnd
+\vspace{-12pt}
+
+
+
+%-----------PROJECTS-----------
+
+\section{PROJECTS}
+
+
+
+
+ \resumeSubHeadingListStart
+
+    \resumeProjectHeading
+      {{\textbf{\large{Hotel Booking Cancellation Prediction}}} $|$ \large{Python, Scikit-learn, Jenkins, Docker, MLflow, Azure}}{}
+      \resumeItemListStart
+         \resumeItem{\normalsize{Designed and delivered a production-grade end-to-end MLOps pipeline to predict hotel booking cancellations using structured tabular data}}  
+         \resumeItem{\normalsize{Automated the full ML lifecycle including data ingestion, preprocessing, feature engineering, model training, evaluation, and versioned artifact management}}  
+         \resumeItem{\normalsize{Implemented CI/CD with Jenkins and Docker, deployed the inference service on \textbf{Azure Container Apps} (or \textbf{Azure App Service}), stored artifacts in \textbf{Azure Blob Storage}, managed secrets via \textbf{Azure Key Vault}, and tracked experiments using \textbf{MLflow}}}  
+      \resumeItemListEnd
+      \vspace{-10pt}
+
+      
+    \resumeProjectHeading
+    {\href{ProjectLink.com}{\textbf{\large{AI Nutrition App - Personalized AI meal recommendations}}} $|$ \large{LangChain,RAG}}{2025}
+    \vspace{-10pt}
+    \resumeItemListStart
+    \resumeItem{\normalsize{Developed a Nutrition app by integrating with \textbf{OpenAI,Ollama} model which Generates 7-day plans based on \textbf{20+ health parameters} and Adapts to Age,Gender,Activity Level,Medical Conditions,auto-detects 150+ allergen conflicts with Image analysis of food images}}
+    \resumeItem{\normalsize{Supports \textbf{30+ regional cuisines},Religious/ethical diet adherence}}
+    \resumeItem{\normalsize{Actionable Insights : Macro/micro nutrient tracking,Shopping list generator,Prep time optimization}}
+    \resumeItemListEnd 
+         \vspace{-10pt}
+         
+    \resumeSubHeadingListStart
+       \vspace{-5pt}
+    \resumeProjectHeading
+    {\href{ProjectLink.com}{\textbf{\large{MindPulse - Personalized Mental Health Insights}}} $|$ \large{Deep Learning, NLP, Streamlit}}{2024}
+    \vspace{-10pt}
+    \resumeItemListStart
+    \resumeItem{\normalsize{Developed a Brain MRI-based tumor detection model using CNNs to aid early diagnosis.}}
+    \resumeItem{\normalsize{Built an AI-powered mental health diagnosis system leveraging NLP and sentiment analysis.}}
+    \resumeItemListEnd 
+         \vspace{-5pt}
+
+\resumeSubHeadingListStart
+   \resumeProjectHeading
+      {{\textbf{\large{Anomaly Detection Algorithm for Video}}} $|$ \large{Python, Machine Learning, Computer Vision}}{}
+      \resumeItemListStart
+        \vspace{5pt}
+         \resumeItem{\normalsize{Developed a machine learning model for detecting anomalies in multivariate video data with improved accuracy and efficiency.}}  
+         \resumeItem{\normalsize{Utilized computer vision techniques to analyze patterns, identify unusual behaviors, and enhance anomaly detection in real-time video streams.}}  
+         \resumeItem{\normalsize{Optimized the model for scalability and performance, ensuring faster detection with minimal false positives.}}  
+      \resumeItemListEnd
+      \vspace{-5pt}
+
+   
+    
+    
+
+
+
+%-----------EDUCATION-----------
+\section{EDUCATION}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Indian Institute of Technology, Tirupati}{2018 -- 2020}
+      {M.Tech CSE - \textbf{8.63} / {10}}
+      {Tirupati, India}
+  \resumeSubHeadingListEnd
+  \vspace{3pt}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {G.H.Patel College of Engineering and Technology}{2014 -- 2018}
+      {B.E.- Computer Engineering  - \textbf{ 8.69} / {10}}{Anand,India}
+  \resumeSubHeadingListEnd
+    % \hspace{2pt}
+%------RELEVANT COURSEWORK-------
+
+
+
+%-----------ACHIEVEMENTS---------------
+% \section{ACHIEVEMENTS}
+   
+%          \resumeItemListStart
+%             \resumeItem{\normalsize{Selected in top 5 teams in Smart India Hackathon, 2017}}
+%            \resumeItem{\normalsize{Secured 96.97\%(ile) in GATE CS, 2018}}       
+%             \resumeItem{\normalsize{Secured Second Rank in SSC Examination in Center}}       
+%             \resumeItemListEnd
+
+%  \vspace{5pt}
+ %-----------CERTIFICATIONS---------------
+
+
+\section{CERTIFICATIONS}
+
+
+$\sbullet[.75] \hspace{0.1cm}$ {\href{certificateLink.com}{ReactJS \& Redux - Udemy}} \hspace{1.6cm}
+$\sbullet[.75] \hspace{0.1cm}$ {\href{https://coursera.org/share/f2d22aac5fc916148e0dd4397fb25805}{Programming for Everybody}} \hspace{2.59cm}
+$\sbullet[.75] \hspace{0.2cm}${\href{https://coursera.org/share/89dc67e456ae63a6bb82d13944329d44}{Git and GitHub}} \\
+
+$\sbullet[.75] \hspace{0.2cm}${\href{certificateLink.com}{AWS Cloud Technical}} \hspace{2.6cm}
+$\sbullet[.75] \hspace{0.1cm}$ {\href{https://coursera.org/share/f0c8124625495a812465bc7393917815}{Machine Learning with Python}} \hspace{2.6cm}
+
+
+
+% $\sbullet[.75] \hspace{0.2cm}${\href{certificateLink.com}{\textbf{5 Stars} in \textbf{C++} \& \textbf{SQL} \href{certificateLink.com}{\raisebox{-0.1\height}\faExternalLink }}}\hspace{1.45cm}
+% $\sbullet[.75] \hspace{0.2cm}${\href{certificateLink.com}{MongoDB Basics}} \hspace{0.5cm}
+% $\sbullet[.75] \hspace{0.2cm}${\href{certificateLink.com}{NodeJS with Express \& MongoDB - Udemy}}
+
+
+\end{document}

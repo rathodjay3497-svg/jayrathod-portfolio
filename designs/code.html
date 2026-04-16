@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Synthetic Architect | Senior AI Engineer Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface-bright": "#363940",
+                "tertiary": "#f5d0ff",
+                "on-tertiary": "#520071",
+                "on-error-container": "#ffdad6",
+                "on-secondary-fixed-variant": "#5700c9",
+                "primary-fixed-dim": "#4cd6ff",
+                "secondary-fixed": "#e9ddff",
+                "surface-variant": "#32353c",
+                "on-tertiary-fixed-variant": "#74009f",
+                "tertiary-fixed": "#f8d8ff",
+                "inverse-primary": "#00677f",
+                "secondary-container": "#7000ff",
+                "inverse-on-surface": "#2e3037",
+                "on-primary-fixed-variant": "#004e60",
+                "tertiary-container": "#e9a9ff",
+                "on-surface-variant": "#bbc9cf",
+                "background": "#10131a",
+                "on-primary-container": "#00566a",
+                "on-background": "#e1e2eb",
+                "tertiary-fixed-dim": "#ecb2ff",
+                "on-primary": "#003543",
+                "surface-dim": "#10131a",
+                "on-surface": "#e1e2eb",
+                "surface-container-low": "#191c22",
+                "on-primary-fixed": "#001f28",
+                "error": "#ffb4ab",
+                "surface-tint": "#4cd6ff",
+                "outline": "#859399",
+                "inverse-surface": "#e1e2eb",
+                "secondary-fixed-dim": "#d1bcff",
+                "on-secondary-fixed": "#23005b",
+                "on-error": "#690005",
+                "on-tertiary-container": "#8000ae",
+                "surface": "#10131a",
+                "error-container": "#93000a",
+                "on-secondary": "#3c0090",
+                "primary-container": "#00d1ff",
+                "outline-variant": "#3c494e",
+                "surface-container-high": "#272a31",
+                "surface-container-highest": "#32353c",
+                "on-secondary-container": "#ddcdff",
+                "surface-container": "#1d2026",
+                "on-tertiary-fixed": "#320047",
+                "primary": "#a4e6ff",
+                "secondary": "#d1bcff",
+                "primary-fixed": "#b7eaff",
+                "surface-container-lowest": "#0b0e14"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "fontFamily": {
+                "headline": ["Space Grotesk"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neural-grid {
+            background-image: linear-gradient(to right, rgba(60, 73, 78, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(60, 73, 78, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .glass-card {
+            background: rgba(39, 42, 49, 0.6);
+            backdrop-filter: blur(20px) saturate(150%);
+            border-top: 1px solid rgba(164, 230, 255, 0.3);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #a4e6ff, #d1bcff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-slate-950/60 backdrop-blur-xl border-b border-white/10 shadow-[0_20px_40px_rgba(0,209,255,0.08)]">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-8 h-20">
+<div class="text-xl font-bold tracking-widest text-white uppercase font-['Space_Grotesk']">
+                Synthetic Architect
+            </div>
+<div class="hidden md:flex items-center gap-8 font-['Space_Grotesk'] tracking-tight">
+<a class="text-cyan-400 border-b-2 border-cyan-400 pb-1" href="#nexus">Nexus</a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#projects">Projects</a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#experience">Experience</a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#stack">Stack</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full text-slate-400 hover:text-white hover:bg-cyan-500/10 transition-all duration-300 flex items-center justify-center" id="theme-toggle">
+<span class="material-symbols-outlined transition-transform duration-300" id="theme-toggle-icon">dark_mode</span>
+</button>
+<button class="bg-primary text-on-primary px-6 py-2 font-bold hover:shadow-[0_0_15px_rgba(0,209,255,0.5)] scale-105 transition-all duration-300">
+                Connect
+            </button>
+</div>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-20 overflow-hidden neural-grid" id="nexus">
+<div class="max-w-7xl mx-auto px-8 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 z-10">
+<div class="flex items-center gap-3 mb-6">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-primary-container"></span>
+</span>
+<span class="text-label text-primary font-medium tracking-widest uppercase text-xs">Active AI Model: Deployment Ready</span>
+</div>
+<h1 class="text-5xl lg:text-7xl font-bold font-headline leading-tight mb-6 tracking-tight">
+                        Building <span class="text-gradient">Intelligent Systems</span> that Scale
+                    </h1>
+<p class="text-xl text-on-surface-variant mb-10 max-w-2xl leading-relaxed">
+                        AI Engineer | RAG | LLMs | Vector Databases. Designing the cognitive infrastructure of the next digital era.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<a class="bg-primary text-on-primary px-8 py-4 font-bold text-lg hover:shadow-[0_0_20px_rgba(164,230,255,0.4)] transition-all" href="#projects">
+                            View Projects
+                        </a>
+<a class="border border-outline-variant hover:bg-surface-container-highest px-8 py-4 font-bold text-lg transition-all" href="#contact">
+                            Contact Me
+                        </a>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="w-full aspect-square glass-card rounded-full flex items-center justify-center p-8 overflow-hidden">
+<img alt="Abstract Neural Visualization" class="w-full h-full object-cover opacity-80 mix-blend-screen scale-110" data-alt="Intricate 3D visualization of a neural network with glowing cyan nodes and purple data strands flowing through a dark void" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqvA3gquH1e8H6c3gwkOXE4ASYx0rts2_nwQLNswQIg1NZUXRcJVcCM31BC9j-b2F7cNk7X5T9TMI5BtykfIsO8AB918YzldHAJt-AcEs--jKsdGSng_ZHkXhDOBkcnHX_jrcaLbsHeqLE-uqUiXKbxOkjHd_zkb7b8xcV-wFZUbNG6mEqdwIb1ll9WlCG1ilq0LqHXB4dGFhLwy87gvlJuw84qWCO5gUy8XFuxMszRTpx2CFb5w7g74AC7-jrJnBxnTX7yMeya4s"/>
+</div>
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-secondary/10 blur-3xl rounded-full"></div>
+<div class="absolute -bottom-10 -left-10 w-48 h-48 bg-primary/10 blur-3xl rounded-full"></div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-32 bg-surface-container-low relative" id="about">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+<div>
+<h2 class="text-sm font-label text-tertiary-fixed-dim uppercase tracking-[0.3em] mb-4">The Architect</h2>
+<h3 class="text-4xl font-headline font-bold mb-8">Engineering Latent Space</h3>
+<div class="space-y-6 text-on-surface-variant leading-relaxed text-lg">
+<p>With over 5 years of experience in the silicon valleys of the digital realm, I specialize in bridging the gap between raw data and actionable intelligence.</p>
+<p>My approach combines architectural precision with the fluid nature of neural models, ensuring that AI implementations are not just powerful, but scalable and cost-effective.</p>
+</div>
+</div>
+<div class="flex flex-wrap content-center gap-4">
+<!-- Skills Chips -->
+<div class="px-6 py-3 bg-surface-container-highest border-l-2 border-primary text-primary font-medium hover:bg-primary/10 transition-colors">Deep Learning</div>
+<div class="px-6 py-3 bg-surface-container-highest border-l-2 border-secondary text-secondary font-medium hover:bg-secondary/10 transition-colors">RAG Architectures</div>
+<div class="px-6 py-3 bg-surface-container-highest border-l-2 border-tertiary text-tertiary font-medium hover:bg-tertiary/10 transition-colors">Vector Search</div>
+<div class="px-6 py-3 bg-surface-container-highest border-l-2 border-primary text-primary font-medium hover:bg-primary/10 transition-colors">LangChain</div>
+<div class="px-6 py-3 bg-surface-container-highest border-l-2 border-secondary text-secondary font-medium hover:bg-secondary/10 transition-colors">PyTorch</div>
+<div class="px-6 py-3 bg-surface-container-highest border-l-2 border-tertiary text-tertiary font-medium hover:bg-tertiary/10 transition-colors">Kubernetes</div>
+<div class="px-6 py-3 bg-surface-container-highest border-l-2 border-primary text-primary font-medium hover:bg-primary/10 transition-colors">FastAPI</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Bento Grid -->
+<section class="py-32 bg-surface" id="projects">
+<div class="max-w-7xl mx-auto px-8">
+<div class="mb-20 text-center">
+<h2 class="text-sm font-label text-secondary uppercase tracking-[0.3em] mb-4">Selected Deployments</h2>
+<h3 class="text-4xl font-headline font-bold">Innovation Trace</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8">
+<!-- Project 1: Large Bento Card -->
+<div class="lg:col-span-8 group relative bg-surface-container-low overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60 z-10"></div>
+<img alt="Nexus RAG Engine" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-40" data-alt="High-tech interface showing complex data nodes connected by glowing lines, symbolizing a retrieval-augmented generation system" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdGl_3tuNR9Sc-qeUeuB80BJrhMdIppqupoXg6mSRCDZ2VJbw3Vh4Fx21qjJ6WFEFZmeW2Yk-G7UcP9mBmix5VM2Dla2RuqMthygT3av-qhyGRkrVJVIUVkyBz5FtmNS05U_QBprtIJFFZxyLrpFF2DDvf0OJpdvMPvNSpuqJNud6x8SnnwKfIIj2mMzuzrWaP3kv4SGJEgYauEdq-U3TFGN9v8BH3JkefuX3DaHUJ2f77KS9gAm9GLujQKaLpOg3Bn9bw-JSm1UA"/>
+<div class="absolute bottom-0 left-0 p-10 z-20">
+<h4 class="text-3xl font-headline font-bold mb-3">Nexus RAG Engine</h4>
+<p class="text-on-surface-variant max-w-lg mb-6">Enterprise-grade retrieval system processing 10M+ documents with sub-second latency using Pinecone and GPT-4.</p>
+<div class="flex gap-4 mb-6">
+<span class="text-xs font-label px-3 py-1 bg-primary/20 text-primary border border-primary/30">LlamaIndex</span>
+<span class="text-xs font-label px-3 py-1 bg-secondary/20 text-secondary border border-secondary/30">PostgreSQL</span>
+</div>
+<a class="inline-flex items-center gap-2 text-primary hover:gap-4 transition-all font-bold" href="#">
+                                View GitHub <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="absolute top-0 left-0 w-1 h-0 bg-primary group-hover:h-full transition-all duration-300"></div>
+</div>
+<!-- Project 2: Square Card -->
+<div class="lg:col-span-4 group relative bg-surface-container-low overflow-hidden">
+<div class="p-10 h-full flex flex-col">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6">psychology</span>
+<h4 class="text-2xl font-headline font-bold mb-3">Cognitive API</h4>
+<p class="text-on-surface-variant mb-auto">A unified abstraction layer for multi-modal LLM orchestration and safety filtering.</p>
+<div class="mt-8 flex gap-3">
+<span class="text-xs font-label px-3 py-1 bg-surface-container-highest text-on-surface-variant">OpenAI</span>
+<span class="text-xs font-label px-3 py-1 bg-surface-container-highest text-on-surface-variant">Anthropic</span>
+</div>
+</div>
+<div class="absolute top-0 left-0 w-1 h-0 bg-secondary group-hover:h-full transition-all duration-300"></div>
+</div>
+<!-- Project 3: Wide Card -->
+<div class="lg:col-span-12 group relative bg-surface-container-low overflow-hidden">
+<div class="grid grid-cols-1 md:grid-cols-2">
+<div class="p-10">
+<h4 class="text-3xl font-headline font-bold mb-3">Latent Vision</h4>
+<p class="text-on-surface-variant mb-6">Real-time object detection and semantic segmentation pipeline for industrial robotics using YOLOv8 and TensorRT.</p>
+<div class="flex flex-wrap gap-4 mb-8">
+<span class="text-xs font-label px-3 py-1 bg-tertiary/20 text-tertiary border border-tertiary/30">PyTorch</span>
+<span class="text-xs font-label px-3 py-1 bg-tertiary/20 text-tertiary border border-tertiary/30">NVIDIA SDK</span>
+</div>
+<a class="inline-flex items-center gap-2 text-tertiary hover:gap-4 transition-all font-bold" href="#">
+                                    Project Documentation <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+<div class="h-64 md:h-full bg-surface-container-highest">
+<img alt="Latent Vision Screenshot" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60" data-alt="Digital representation of computer vision tracking multiple objects with colored bounding boxes on a factory floor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEt0kPeHQGVWcyTCfxEukNXh6mOky1rQm8PRcuOs8vV_94JPWrSoNInqz00fqtsVQwCTjuAn3fRRoVESXzQPHBEAWQWmb_ZXIiGaz2u3TYapTAj_EufxguZkMyb9XktB8qzsQbWfhlBkkiuzb1uJX2NrptvRZTfamdzkgc9bnURMwwRj91RoY2bBs87iRgcEpB_3luXDH9yMGm4O5U95FDWZz2xhcW50hP0DfvOs0DJQ2jvgRTuXASAUtz7ZF180RazicVxEXvMIg"/>
+</div>
+</div>
+<div class="absolute top-0 left-0 w-1 h-0 bg-tertiary group-hover:h-full transition-all duration-300"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience Timeline -->
+<section class="py-32 bg-surface-container-low" id="experience">
+<div class="max-w-4xl mx-auto px-8">
+<div class="mb-20 text-center">
+<h2 class="text-sm font-label text-primary uppercase tracking-[0.3em] mb-4">Professional History</h2>
+<h3 class="text-4xl font-headline font-bold">The Development Trace</h3>
+</div>
+<div class="relative border-l border-outline-variant/20 ml-4 space-y-16">
+<!-- Role 1 -->
+<div class="relative pl-12">
+<div class="absolute -left-[7px] top-0 w-3 h-3 bg-primary-fixed-dim rounded-full shadow-[0_0_15px_rgba(76,214,255,0.8)]"></div>
+<div class="mb-2">
+<span class="text-sm font-label text-tertiary uppercase tracking-widest">2022 - Present</span>
+<h4 class="text-2xl font-headline font-bold mt-1">Lead AI Architect</h4>
+<p class="text-primary font-medium">Neural Dynamics Corp</p>
+</div>
+<p class="text-on-surface-variant leading-relaxed">Pioneering the transition to RAG-based architectures across the enterprise. Managed a team of 12 engineers to deploy custom LLM solutions that reduced operational overhead by 40%.</p>
+</div>
+<!-- Role 2 -->
+<div class="relative pl-12">
+<div class="absolute -left-[6px] top-0 w-3 h-3 bg-outline-variant rounded-full"></div>
+<div class="mb-2">
+<span class="text-sm font-label text-tertiary uppercase tracking-widest">2020 - 2022</span>
+<h4 class="text-2xl font-headline font-bold mt-1">Senior ML Engineer</h4>
+<p class="text-primary font-medium">DataStream Labs</p>
+</div>
+<p class="text-on-surface-variant leading-relaxed">Built large-scale data pipelines for real-time inference. Specialized in quantizing models for edge deployment on mobile and IoT devices.</p>
+</div>
+<!-- Role 3 -->
+<div class="relative pl-12">
+<div class="absolute -left-[6px] top-0 w-3 h-3 bg-outline-variant rounded-full"></div>
+<div class="mb-2">
+<span class="text-sm font-label text-tertiary uppercase tracking-widest">2018 - 2020</span>
+<h4 class="text-2xl font-headline font-bold mt-1">Backend Engineer (AI Integration)</h4>
+<p class="text-primary font-medium">Flux Systems</p>
+</div>
+<p class="text-on-surface-variant leading-relaxed">Early adopter of transformer models. Focused on the infrastructure side of AI, ensuring reliable API delivery and vector database management.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Stack / Skills Grid -->
+<section class="py-32 bg-surface neural-grid" id="stack">
+<div class="max-w-7xl mx-auto px-8">
+<div class="mb-20">
+<h2 class="text-sm font-label text-primary uppercase tracking-[0.3em] mb-4">The Toolchain</h2>
+<h3 class="text-4xl font-headline font-bold">Production Stack</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- AI/ML -->
+<div class="p-8 bg-surface-container-low border-b-2 border-primary/20 hover:border-primary transition-all">
+<div class="flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-primary">model_training</span>
+<h5 class="font-headline font-bold text-xl">AI / ML</h5>
+</div>
+<ul class="space-y-3 text-on-surface-variant font-label">
+<li>PyTorch &amp; TensorFlow</li>
+<li>Hugging Face Transformers</li>
+<li>Scikit-learn</li>
+<li>ONNX / TensorRT</li>
+</ul>
+</div>
+<!-- LLM Stack -->
+<div class="p-8 bg-surface-container-low border-b-2 border-secondary/20 hover:border-secondary transition-all">
+<div class="flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-secondary">database</span>
+<h5 class="font-headline font-bold text-xl">RAG / LLM</h5>
+</div>
+<ul class="space-y-3 text-on-surface-variant font-label">
+<li>LangChain &amp; Index</li>
+<li>Pinecone / Milvus / Weaviate</li>
+<li>Vector Embedding Optimization</li>
+<li>Prompt Engineering</li>
+</ul>
+</div>
+<!-- Backend -->
+<div class="p-8 bg-surface-container-low border-b-2 border-tertiary/20 hover:border-tertiary transition-all">
+<div class="flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-tertiary">code</span>
+<h5 class="font-headline font-bold text-xl">Backend</h5>
+</div>
+<ul class="space-y-3 text-on-surface-variant font-label">
+<li>Python (FastAPI, Django)</li>
+<li>Rust (Performance Core)</li>
+<li>gRPC &amp; WebSockets</li>
+<li>PostgreSQL &amp; Redis</li>
+</ul>
+</div>
+<!-- Cloud/DevOps -->
+<div class="p-8 bg-surface-container-low border-b-2 border-primary/20 hover:border-primary transition-all">
+<div class="flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-primary">cloud_done</span>
+<h5 class="font-headline font-bold text-xl">Infra</h5>
+</div>
+<ul class="space-y-3 text-on-surface-variant font-label">
+<li>AWS (SageMaker, Lambda)</li>
+<li>Kubernetes &amp; Docker</li>
+<li>CI/CD for ML (MLOps)</li>
+<li>Terraform</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-32 bg-surface-container-low" id="contact">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+<div>
+<h2 class="text-sm font-label text-primary uppercase tracking-[0.3em] mb-4">Transmission</h2>
+<h3 class="text-5xl font-headline font-bold mb-8">Let's Build the <span class="text-gradient">Future</span></h3>
+<p class="text-xl text-on-surface-variant mb-12">Looking for an engineer who understands both the latent space and the server rack? Let's connect.</p>
+<div class="space-y-6">
+<div class="flex items-center gap-4 group">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container-highest rounded-full text-primary group-hover:bg-primary group-hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<p class="text-xs font-label text-outline uppercase">Email</p>
+<p class="text-lg font-bold">architect@synthetic-ai.dev</p>
+</div>
+</div>
+<div class="flex items-center gap-4 group">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container-highest rounded-full text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-all">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<p class="text-xs font-label text-outline uppercase">Location</p>
+<p class="text-lg font-bold" data-location="San Francisco, CA">San Francisco, CA</p>
+</div>
+</div>
+</div>
+</div>
+<div class="glass-card p-10">
+<form class="space-y-6">
+<div>
+<label class="block text-xs font-label text-outline uppercase mb-2">Full Name</label>
+<input class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 text-on-surface p-4 transition-all" placeholder="John Doe" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-label text-outline uppercase mb-2">Work Email</label>
+<input class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 text-on-surface p-4 transition-all" placeholder="john@company.ai" type="email"/>
+</div>
+<div>
+<label class="block text-xs font-label text-outline uppercase mb-2">Brief Intent</label>
+<textarea class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 text-on-surface p-4 transition-all" placeholder="Describe your project..." rows="4"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary font-bold py-4 hover:shadow-[0_0_20px_rgba(164,230,255,0.4)] transition-all uppercase tracking-widest" type="submit">
+                                Initiate Contact
+                            </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-950 border-t border-slate-900 w-full py-12 px-8">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto">
+<div class="font-['Space_Grotesk'] font-bold text-slate-200">
+                Synthetic Architect
+            </div>
+<div class="text-slate-500 font-['Inter'] text-sm leading-relaxed">
+                © 2024 Synthetic Architect. Latent Space Optimization Enabled.
+            </div>
+<div class="flex gap-8">
+<a class="text-slate-500 hover:text-cyan-300 transition-colors opacity-80 hover:opacity-100 font-['Inter'] text-sm" href="#">GitHub</a>
+<a class="text-slate-500 hover:text-cyan-300 transition-colors opacity-80 hover:opacity-100 font-['Inter'] text-sm" href="#">LinkedIn</a>
+<a class="text-slate-500 hover:text-cyan-300 transition-colors opacity-80 hover:opacity-100 font-['Inter'] text-sm" href="#">ResearchGate</a>
+</div>
+</div>
+</footer>
+<script>
+      const themeToggle = document.getElementById('theme-toggle');
+      const themeToggleIcon = document.getElementById('theme-toggle-icon');
+      const htmlElement = document.documentElement;
+
+      themeToggle.addEventListener('click', () => {
+        if (htmlElement.classList.contains('dark')) {
+          htmlElement.classList.remove('dark');
+          themeToggleIcon.textContent = 'light_mode';
+          localStorage.setItem('theme', 'light');
+        } else {
+          htmlElement.classList.add('dark');
+          themeToggleIcon.textContent = 'dark_mode';
+          localStorage.setItem('theme', 'dark');
+        }
+      });
+
+      // Initialize theme on load
+      if (localStorage.getItem('theme') === 'light') {
+        htmlElement.classList.remove('dark');
+        themeToggleIcon.textContent = 'light_mode';
+      }
+    </script></body></html>
