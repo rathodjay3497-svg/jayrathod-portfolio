@@ -48,7 +48,7 @@ export default function Skills() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
           {SKILL_CATEGORIES.map((cat, i) => (
             <motion.div
               key={cat.name}
@@ -56,7 +56,7 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className={`group p-8 bg-surface-container-low border-b-2 transition-all duration-300 ${
+              className={`group p-5 sm:p-6 md:p-8 bg-surface-container-low border-b-2 transition-all duration-300 ${
                 cat.accentColor === "primary"
                   ? "border-primary/20 hover:border-primary"
                   : cat.accentColor === "secondary"
@@ -64,7 +64,7 @@ export default function Skills() {
                   : "border-tertiary/20 hover:border-tertiary"
               }`}
             >
-              <div className="flex items-center gap-4 mb-6">
+              <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
                 <span
                   className={`${
                     cat.accentColor === "primary"

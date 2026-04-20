@@ -53,7 +53,7 @@ export default function Experience() {
               >
                 <TimelineNode isCurrent={exp.isCurrent} />
 
-                <div>
+                <div className="pl-5">
                   <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-1">
                     <span className="text-xs font-label text-tertiary-fixed-dim uppercase tracking-widest">
                       {exp.period}
@@ -85,10 +85,10 @@ export default function Experience() {
                     {exp.description.map((d, j) => (
                       <li
                         key={j}
-                        className="text-on-surface-variant text-sm leading-relaxed grid grid-cols-[12px_1fr] gap-2"
+                        className="text-on-surface-variant text-sm leading-relaxed flex items-start gap-2"
                       >
-                        <span className="text-primary/60 flex-shrink-0 leading-5 text-[10px] pt-px select-none">▸</span>
-                        <span>{d}</span>
+                        <span className="text-primary/60 w-3 leading-5 text-[10px] pt-px text-center select-none shrink-0">&rsaquo;</span>
+                        <span className="min-w-0 flex-1">{d}</span>
                       </li>
                     ))}
                   </ul>
@@ -101,3 +101,4 @@ export default function Experience() {
     </section>
   );
 }
+

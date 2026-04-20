@@ -7,11 +7,11 @@ export default function Footer() {
     <footer className="bg-surface-container-lowest border-t border-outline-variant/20 py-10">
       <div className="max-w-7xl mx-auto px-6 md:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="font-headline font-bold text-lg tracking-widest text-white uppercase">
-          JR<span className="text-primary">.</span>AI
+          Jay Rathod<span className="text-primary">.</span>AI
         </div>
 
         <p className="text-on-surface-variant text-sm font-label text-center">
-          © {year} {PERSONAL.name} · Built with React + FastAPI
+          © {year} {PERSONAL.name}
         </p>
 
         <div className="flex items-center gap-5">

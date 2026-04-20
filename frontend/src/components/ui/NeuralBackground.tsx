@@ -29,7 +29,7 @@ export default function NeuralBackground() {
 
   return (
     <svg
-      className="absolute inset-0 w-full h-full pointer-events-none opacity-20"
+      className="absolute inset-0 w-full h-full pointer-events-none neural-network"
       viewBox="0 0 100 100"
       preserveAspectRatio="xMidYMid slice"
       aria-hidden="true"
@@ -41,7 +41,7 @@ export default function NeuralBackground() {
           y1={nodes[a].y}
           x2={nodes[b].x}
           y2={nodes[b].y}
-          stroke="#32353c"
+          stroke="var(--neural-line-color)"
           strokeWidth="0.3"
         />
       ))}
@@ -51,7 +51,7 @@ export default function NeuralBackground() {
           cx={n.x}
           cy={n.y}
           r="0.6"
-          fill="#a4e6ff"
+          fill="var(--neural-node-color)"
           style={{
             animation: `flicker ${2 + Math.random() * 4}s ease-in-out infinite`,
             animationDelay: `${Math.random() * 3}s`,

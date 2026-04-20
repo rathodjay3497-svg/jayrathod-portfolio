@@ -77,12 +77,20 @@ export default function Hero() {
           <motion.div variants={item} className="flex flex-wrap gap-4">
             <a
               href="#projects"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+              }}
               className="bg-primary text-on-primary px-8 py-4 font-bold text-base font-headline hover:shadow-cyan-glow-lg transition-all duration-300"
             >
               View Projects
             </a>
             <a
               href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+              }}
               className="border border-outline-variant hover:bg-surface-container-highest px-8 py-4 font-bold text-base font-headline transition-all duration-300"
             >
               Contact Me
@@ -142,7 +150,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <motion.div
+      {/* <motion.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-on-surface-variant"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -154,7 +162,7 @@ export default function Hero() {
           transition={{ duration: 1.5, repeat: Infinity }}
           className="w-px h-8 bg-gradient-to-b from-primary to-transparent"
         />
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 }

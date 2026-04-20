@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { Home, User, FolderKanban, Zap, Briefcase, Mail } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { NAV_LINKS } from "../../lib/data";
 import { useTheme } from "../../lib/ThemeContext";
@@ -77,13 +78,13 @@ function ThemeToggle() {
 }
 
 // ── Section index for breadcrumb label ───────────────────────────────────────
-const SECTION_ICONS: Record<string, string> = {
-  "#hero": "🏠",
-  "#about": "👤",
-  "#projects": "🚀",
-  "#skills": "⚡",
-  "#experience": "💼",
-  "#contact": "📡",
+const navIcons: Record<string, React.ReactNode> = {
+  "#hero":       <Home size={16} />,
+  "#about":      <User size={16} />,
+  "#projects":   <FolderKanban size={16} />,
+  "#skills":     <Zap size={16} />,
+  "#experience": <Briefcase size={16} />,
+  "#contact":    <Mail size={16} />,
 };
 
 // ── Main Navbar ───────────────────────────────────────────────────────────────
@@ -123,6 +124,13 @@ export default function Navbar() {
   }, []);
 
   const activeLink = NAV_LINKS.find((l) => l.href === active);
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace("#", "");
+    const elem = document.getElementById(targetId);
+    elem?.scrollIntoView({ behavior: "smooth" });
+    setMenuOpen(false);
+  };
 
   return (
     <motion.nav
@@ -136,6 +144,7 @@ export default function Navbar() {
         {/* Logo */}
         <a
           href="#hero"
+          onClick={(e) => handleScroll(e, "#hero")}
           className={`font-headline font-bold text-lg tracking-widest uppercase transition-colors ${isDark ? "text-white hover:text-primary" : "text-gray-900 hover:text-blue-600"
             }`}
         >
@@ -148,6 +157,7 @@ export default function Navbar() {
             <a
               key={href}
               href={href}
+              onClick={(e) => handleScroll(e, href)}
               className={`text-sm transition-colors relative pb-1 ${active === href
                   ? "text-primary"
                   : isDark
@@ -174,6 +184,7 @@ export default function Navbar() {
           {/* Connect CTA - desktop only */}
           <a
             href="#contact"
+            onClick={(e) => handleScroll(e, "#contact")}
             className="hidden md:block bg-primary text-on-primary px-5 py-2 text-sm font-bold font-headline hover:shadow-neon-primary transition-all duration-300"
           >
             Connect
@@ -231,7 +242,7 @@ export default function Navbar() {
               </span>
               <span className={`text-[11px] ${isDark ? "text-outline/50" : "text-gray-300"}`}>/</span>
               <span className="text-[11px] font-label font-semibold text-primary uppercase tracking-widest flex items-center gap-1">
-                <span>{SECTION_ICONS[active] ?? "📍"}</span>
+                <span>{navIcons[active] ?? "📍"}</span>
                 {activeLink?.label ?? "Home"}
               </span>
 
@@ -308,7 +319,7 @@ export default function Navbar() {
                             : "bg-white/70 border border-gray-200 hover:border-blue-200 hover:bg-blue-50/50"
                         }`}
                     >
-                      <span className="text-lg leading-none">{SECTION_ICONS[href]}</span>
+                      <span className="flex items-center justify-center text-primary">{navIcons[href]}</span>
                       <span
                         className={`text-sm font-label font-medium ${isActive
                             ? "text-primary"

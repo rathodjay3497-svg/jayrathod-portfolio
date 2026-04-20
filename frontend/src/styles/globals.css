@@ -19,6 +19,11 @@
     --color-on-surface-variant: #bbc9cf;
     --color-outline-variant: #3c494e;
     --color-primary-fixed-dim: #4cd6ff;
+    --neural-line-color: #32353c;
+    --neural-node-color: #a4e6ff;
+    --neural-network-opacity: 0.2;
+    --text-gradient-start: #a4e6ff;
+    --text-gradient-end: #d1bcff;
   }
 
   /* ── Light theme overrides ── */
@@ -29,6 +34,14 @@
   html.light body {
     background-color: #f4f6fb;
     color: #0d1117;
+  }
+
+  html.light {
+    --neural-line-color: #90a3b5;
+    --neural-node-color: #57b8df;
+    --neural-network-opacity: 0.12;
+    --text-gradient-start: #0085c7;
+    --text-gradient-end: #7366e4;
   }
 
   /* Remap Tailwind surface tokens for light mode via CSS overrides */
@@ -42,18 +55,26 @@
   html.light .text-on-surface { color: #0d1117 !important; }
   html.light .text-on-surface-variant { color: #3d4a5c !important; }
   html.light .text-outline { color: #6b7a8d !important; }
+  html.light .text-primary { color: #0074ad !important; }
+  html.light .text-secondary { color: #6b4fd2 !important; }
+  html.light .text-tertiary { color: #a14bbb !important; }
+  html.light .text-on-primary { color: #ffffff !important; }
+  html.light .bg-primary { background-color: #0074ad !important; }
+  html.light .border-primary { border-color: #0074ad !important; }
+  html.light .group:hover .group-hover\:bg-primary { background-color: #0074ad !important; }
+  html.light .group:hover .group-hover\:text-on-primary { color: #ffffff !important; }
 
   html.light .border-outline-variant { border-color: #c5ccd9 !important; }
   html.light .border-outline-variant\/20 { border-color: rgba(197,204,217,0.20) !important; }
   html.light .border-outline-variant\/30 { border-color: rgba(197,204,217,0.30) !important; }
 
   html.light .nav-glass {
-    background: rgba(244, 246, 251, 0.75) !important;
+    background: rgba(255, 255, 255, 0.86) !important;
     border-bottom-color: rgba(197, 204, 217, 0.4) !important;
   }
 
   html.light .glass-card {
-    background: rgba(255, 255, 255, 0.70) !important;
+    background: rgba(255, 255, 255, 0.84) !important;
     border-top-color: rgba(0, 120, 160, 0.2) !important;
   }
 
@@ -68,8 +89,8 @@
   /* Neural grid lighter in light mode */
   html.light .neural-grid {
     background-image:
-      linear-gradient(to right, rgba(120,140,160,0.07) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(120,140,160,0.07) 1px, transparent 1px) !important;
+      linear-gradient(to right, rgba(120,140,160,0.038) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(120,140,160,0.038) 1px, transparent 1px) !important;
   }
 
   * {
@@ -139,16 +160,21 @@
   }
 
   .text-gradient {
-    background: linear-gradient(to right, #a4e6ff, #d1bcff);
+    background: linear-gradient(to right, var(--text-gradient-start), var(--text-gradient-end));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    color: transparent;
   }
 
   .nav-glass {
     background: rgba(16, 19, 26, 0.6);
     backdrop-filter: blur(20px) saturate(150%);
     border-bottom: 1px solid rgba(60, 73, 78, 0.3);
+  }
+
+  .neural-network {
+    opacity: var(--neural-network-opacity);
   }
 
   .neon-border-left {
