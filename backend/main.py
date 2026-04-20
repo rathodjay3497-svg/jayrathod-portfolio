@@ -11,7 +11,7 @@ Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Portfolio API", version="1.0.0")
 
-allowed_origins_raw = os.getenv("ALLOWED_ORIGINS", "http://localhost:5173,http://localhost:4173")
+allowed_origins_raw = os.getenv("ALLOWED_ORIGINS", "https://your-frontend.vercel.app,http://localhost:5173")
 allowed_origins = [o.strip() for o in allowed_origins_raw.split(",")]
 
 app.add_middleware(
