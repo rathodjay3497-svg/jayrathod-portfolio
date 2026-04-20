@@ -156,7 +156,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
 export const EXPERIENCES: Experience[] = [
   {
     id: "techabbot",
-    company: "Techabbot",
+    company: "TechAbbot",
     role: "Senior Software Developer",
     period: "Nov 2025 - Present",
     location: "Ahmedabad, India",
