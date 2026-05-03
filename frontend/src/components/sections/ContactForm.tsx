@@ -8,11 +8,8 @@ const EMPTY: ContactFormData = { name: "", email: "", message: "" };
 
 type FormErrors = Partial<Record<keyof ContactFormData, string>>;
 
-type FormErrors = Partial<Record<keyof ContactFormData, string>>;
-
 export default function ContactForm() {
   const [form, setForm] = useState<ContactFormData>(EMPTY);
-  const [errors, setErrors] = useState<FormErrors>({});
   const [errors, setErrors] = useState<FormErrors>({});
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
@@ -31,33 +28,9 @@ export default function ContactForm() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const validate = (): boolean => {
-    const newErrors: FormErrors = {};
-    if (!form.name.trim()) newErrors.name = "Identification required";
-    if (!form.email.trim()) {
-      newErrors.email = "Secure channel (email) required";
-    } else if (!/^\S+@\S+\.\S+$/.test(form.email)) {
-      newErrors.email = "Invalid transmission frequency (email format)";
-    }
-    if (!form.message.trim()) newErrors.message = "Directive briefing missing";
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    const { name, value } = e.target;
-    setForm((f) => ({ ...f, [name]: value }));
-    // Clear error for this field when user types
-    if (errors[name as keyof ContactFormData]) {
-      setErrors((prev) => {
-        const next = { ...prev };
-        delete next[name as keyof ContactFormData];
-        return next;
-      });
-    }
     const { name, value } = e.target;
     setForm((f) => ({ ...f, [name]: value }));
     // Clear error for this field when user types

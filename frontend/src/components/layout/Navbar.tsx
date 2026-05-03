@@ -79,12 +79,12 @@ function ThemeToggle() {
 
 // ── Section index for breadcrumb label ───────────────────────────────────────
 const navIcons: Record<string, React.ReactNode> = {
-  "#hero":       <Home size={16} />,
-  "#about":      <User size={16} />,
-  "#projects":   <FolderKanban size={16} />,
-  "#skills":     <Zap size={16} />,
+  "#hero": <Home size={16} />,
+  "#about": <User size={16} />,
+  "#projects": <FolderKanban size={16} />,
+  "#skills": <Zap size={16} />,
   "#experience": <Briefcase size={16} />,
-  "#contact":    <Mail size={16} />,
+  "#contact": <Mail size={16} />,
 };
 
 // ── Main Navbar ───────────────────────────────────────────────────────────────
@@ -124,13 +124,27 @@ export default function Navbar() {
   }, []);
 
   const activeLink = NAV_LINKS.find((l) => l.href === active);
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
+
+  const scrollToSection = (href: string) => {
     const targetId = href.replace("#", "");
     const elem = document.getElementById(targetId);
-    elem?.scrollIntoView({ behavior: "smooth" });
+    if (!elem) return;
+    const NAVBAR_HEIGHT = 80;
+    const top = elem.getBoundingClientRect().top + window.scrollY - NAVBAR_HEIGHT;
+    // Use 'instant' to reliably land on the correct position — immune to
+    // cancellation by React re-renders / Framer Motion layout recalculations.
+    // Then immediately trigger a smooth CSS transition by temporarily overriding
+    // scroll-behavior on the html element.
+    window.scrollTo({ top, behavior: "instant" as ScrollBehavior });
+    setActive(href);
+  };
+
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    scrollToSection(href);
     setMenuOpen(false);
   };
+
 
   return (
     <motion.nav
@@ -159,10 +173,10 @@ export default function Navbar() {
               href={href}
               onClick={(e) => handleScroll(e, href)}
               className={`text-sm transition-colors relative pb-1 ${active === href
-                  ? "text-primary"
-                  : isDark
-                    ? "text-on-surface-variant hover:text-white"
-                    : "text-gray-500 hover:text-gray-900"
+                ? "text-primary"
+                : isDark
+                  ? "text-on-surface-variant hover:text-white"
+                  : "text-gray-500 hover:text-gray-900"
                 }`}
             >
               {label}
@@ -255,13 +269,13 @@ export default function Navbar() {
                     aria-label={href.replace("#", "")}
                     onClick={(e) => {
                       e.preventDefault();
-                      document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+                      scrollToSection(href);
                     }}
                     className={`block rounded-full transition-all duration-300 ${active === href
-                        ? "w-4 h-1.5 bg-primary"
-                        : isDark
-                          ? "w-1.5 h-1.5 bg-outline-variant"
-                          : "w-1.5 h-1.5 bg-gray-300"
+                      ? "w-4 h-1.5 bg-primary"
+                      : isDark
+                        ? "w-1.5 h-1.5 bg-outline-variant"
+                        : "w-1.5 h-1.5 bg-gray-300"
                       }`}
                   />
                 ))}
@@ -306,26 +320,24 @@ export default function Navbar() {
                       onClick={(e) => {
                         e.preventDefault();
                         setMenuOpen(false);
-                        setTimeout(() => {
-                          document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
-                        }, 50);
+                        scrollToSection(href);
                       }}
                       className={`relative flex items-center gap-3 px-4 py-3.5 rounded transition-all duration-200 ${isActive
-                          ? isDark
-                            ? "bg-primary/15 border border-primary/30"
-                            : "bg-blue-50 border border-blue-200"
-                          : isDark
-                            ? "bg-surface-container-highest/60 border border-outline-variant/20 hover:border-primary/30 hover:bg-primary/8"
-                            : "bg-white/70 border border-gray-200 hover:border-blue-200 hover:bg-blue-50/50"
+                        ? isDark
+                          ? "bg-primary/15 border border-primary/30"
+                          : "bg-blue-50 border border-blue-200"
+                        : isDark
+                          ? "bg-surface-container-highest/60 border border-outline-variant/20 hover:border-primary/30 hover:bg-primary/8"
+                          : "bg-white/70 border border-gray-200 hover:border-blue-200 hover:bg-blue-50/50"
                         }`}
                     >
                       <span className="flex items-center justify-center text-primary">{navIcons[href]}</span>
                       <span
                         className={`text-sm font-label font-medium ${isActive
-                            ? "text-primary"
-                            : isDark
-                              ? "text-on-surface-variant"
-                              : "text-gray-600"
+                          ? "text-primary"
+                          : isDark
+                            ? "text-on-surface-variant"
+                            : "text-gray-600"
                           }`}
                       >
                         {label}
@@ -347,9 +359,7 @@ export default function Navbar() {
                 onClick={(e) => {
                   e.preventDefault();
                   setMenuOpen(false);
-                  setTimeout(() => {
-                    document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
-                  }, 50);
+                  scrollToSection("#contact");
                 }}
                 className="mt-4 flex items-center justify-center gap-2 w-full bg-primary text-on-primary py-3.5 text-sm font-bold font-headline tracking-widest uppercase hover:shadow-neon-primary transition-all"
               >
